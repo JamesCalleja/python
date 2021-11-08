@@ -1,0 +1,21 @@
+friends = ["Nathan","James","Matt"]
+lucky_numbers = [3,5,7,23,56,44]
+print(friends[1:])
+print(friends[-1])
+print(friends)
+friends.extend(lucky_numbers)
+print(friends)
+friends = ["Nathan","James","Matt"]
+friends.append("Jake")
+print(friends)
+friends.insert(1, "Michelle")
+friends2 = friends.copy()
+print(friends2)
+print(friends)
+friends.remove("Michelle")
+print(friends)
+friends.pop()
+print(friends)
+print(friends.index("James"))
+lucky_numbers.sort()
+print(lucky_numbers)
