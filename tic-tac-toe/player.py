@@ -13,7 +13,7 @@ class RandomComputerPlayer(Player):
         super().__init__(letter)
 
     def get_move(self, game):
-        square = random.choice(game.avialable_moves)
+        square = random.choice(game.available_moves())
         return square
 
 class HumanPlayer(Player):
@@ -30,8 +30,8 @@ class HumanPlayer(Player):
             #if that spot is not available on the board, we also say it's invalid
             try:
                 val = int(square)
-                if val not in game.avialable_moves():
-                    raise  ValueError
+                if val not in game.available_moves():
+                    raise ValueError
             except ValueError:
                 print("Invalid square. Try again. ")
 
