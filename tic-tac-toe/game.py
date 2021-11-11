@@ -35,12 +35,17 @@ class TicTacToe:
         return self.board.count(' ')
 
     def make_move(self, square, letter):
-        if self.board[square] == ' ':
-            self.board[square] = letter
-            if self.winner(square, letter):
-                self.current_winner = letter
-            return True
-        return False
+        try:
+            if self.board[square] == ' ':
+                self.board[square] = letter
+                if self.winner(square, letter):
+                    self.current_winner = letter
+                return True
+            return False
+        except IndexError:
+            print("out of range")
+        except TypeError:
+            print(("must be an integer"))
 
     def winner(self, square, letter):
         # winner if 3 in a row anywhere...
