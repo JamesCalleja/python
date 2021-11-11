@@ -46,6 +46,8 @@ class TicTacToe:
             print("out of range")
         except TypeError:
             print(("must be an integer"))
+        except KeyboardInterrupt:
+            print("something has gone horribly wrong")
 
     def winner(self, square, letter):
         # winner if 3 in a row anywhere...
@@ -89,7 +91,7 @@ def play(game, x_player, o_player, print_game=True):
 
         if game.make_move(square, letter):
             if print_game:
-                print(letter + f'makes a move to square {square}')
+                print(letter + f' makes a move to square {square}')
                 game.print_board()
                 print('')  # just an empty line
 
