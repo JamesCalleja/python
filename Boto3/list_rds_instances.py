@@ -1,4 +1,32 @@
+from turtle import st
 import boto3
+
+client = boto3.client('rds')
+response = client.describe_db_instances()
+
+db_dictionary = {}
+
+for db in response['DBInstances']:
+   str = db_instance_name = db['DBInstanceIdentifier']
+   key_value = {'db_name': str}
+   db_dictionary.update(key_value)
+
+   str = db_type = db['DBInstanceClass']
+   key_value = {'DBInstanceClass': str}
+   db_dictionary.update(key_value)
+
+   str = db_storage = db['AllocatedStorage']
+   key_value = {'AllocatedStorage': str}
+   db_dictionary.update(key_value)
+
+   str = db_engine = db['Engine']
+   key_value = {'Engine': str}
+   db_dictionary.update(key_value)
+
+   print(db_dictionary)
+
+
+# import boto3
 
 client = boto3.client('rds')
 response = client.describe_db_instances()
@@ -13,5 +41,7 @@ for db in response['DBInstances']:
    db_list.append(str)
    str = db_engine = db['Engine']
    db_list.append(str)
-   
-print(db_list)
+
+
+new_lines = f"\n\n\n"
+print(new_lines, db_list)
