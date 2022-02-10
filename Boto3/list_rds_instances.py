@@ -23,6 +23,7 @@ for db in response['DBInstances']:
    key_value = {'Engine': str}
    db_dictionary.update(key_value)
 
+   print(db_dictionary["db_name"], db_dictionary["AllocatedStorage"])
    print(db_dictionary)
 
 
