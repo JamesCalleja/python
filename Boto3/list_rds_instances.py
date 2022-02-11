@@ -7,19 +7,19 @@ response = client.describe_db_instances()
 db_dictionary = {}
 
 for db in response['DBInstances']:
-   str = db_instance_name = db['DBInstanceIdentifier']
+   str = db['DBInstanceIdentifier']
    key_value = {'db_name': str}
    db_dictionary.update(key_value)
 
-   str = db_type = db['DBInstanceClass']
+   str = db['DBInstanceClass']
    key_value = {'DBInstanceClass': str}
    db_dictionary.update(key_value)
 
-   str = db_storage = db['AllocatedStorage']
+   str = db['AllocatedStorage']
    key_value = {'AllocatedStorage': str}
    db_dictionary.update(key_value)
 
-   str = db_engine = db['Engine']
+   str = db['Engine']
    key_value = {'Engine': str}
    db_dictionary.update(key_value)
 
