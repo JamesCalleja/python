@@ -4,6 +4,8 @@ import boto3
 client = boto3.client('rds')
 response = client.describe_db_instances()
 
+print(response)
+
 db_dictionary = {}
 
 for db in response['DBInstances']:

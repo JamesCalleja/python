@@ -1,4 +1,3 @@
-import json
 import boto3
 
 
@@ -21,4 +20,3 @@ for i in response['Reservations']:
 
 msg = f'\nThere are {count} instances in the account.'
 print(msg)
-
